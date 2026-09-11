@@ -330,9 +330,9 @@ function startLiveHeroUpdates() {
     }
   ];
 
-  let stateIndex = 0;
   const update = () => {
     if (document.body.classList.contains("live-data-disabled")) return;
+    const stateIndex = Math.floor(Date.now() / 3000) % states.length;
     const state = states[stateIndex];
     const values = {
       "balance-label": state.balanceLabel,
@@ -369,6 +369,7 @@ function startLiveHeroUpdates() {
   };
 
   update();
+  window.setInterval(update, 1000);
 }
 
 function startBalanceGrowth() {
@@ -378,12 +379,19 @@ function startBalanceGrowth() {
   const notificationCard = document.querySelector(".card-balance");
   if (!balanceElement || !notificationValue || !notificationNote) return;
 
-  const balance = 40128;
-  const received = 128;
-  balanceElement.textContent = `₹${balance.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-  notificationValue.textContent = `+₹${received.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-  notificationNote.textContent = "Received successfully";
-  notificationCard?.classList.remove("money-received-pulse");
+  const update = () => {
+    if (document.body.classList.contains("live-data-disabled")) return;
+    const interval = Math.floor(Date.now() / 5000);
+    const received = 80 + (interval % 9) * 12;
+    const balance = 40000 + (interval % 48) * 96 + received;
+    balanceElement.textContent = `₹${balance.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    notificationValue.textContent = `+₹${received.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    notificationNote.textContent = "Received successfully";
+    notificationCard?.classList.remove("money-received-pulse");
+    window.requestAnimationFrame(() => notificationCard?.classList.add("money-received-pulse"));
+  };
+  update();
+  window.setInterval(update, 1000);
 }
 
 function startScrollStory() {

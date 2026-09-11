@@ -1,0 +1,450 @@
+@media (max-width: 1024px) {
+  .desktop-nav,
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .mobile-menu.open {
+    display: block;
+  }
+
+  .hero-grid,
+  .wallet-grid,
+  .team-grid,
+  .security-grid,
+  .faq-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reward-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container,
+  .hero-copy,
+  .hero-visual,
+  .team-dashboard,
+  .transaction-board,
+  .security-copy,
+  .security-visual {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-copy h1,
+  .section-heading h2,
+  .team-copy h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .reveal,
+  .reveal.visible,
+  .fade-left,
+  .fade-right,
+  .fade-up {
+    transform: none !important;
+  }
+
+  .hero-visual {
+    overflow: hidden;
+  }
+
+  .hero-visual .phone-shell {
+    width: min(330px, calc(100vw - 32px));
+    max-width: 100%;
+    margin-inline: auto;
+    transform: none;
+  }
+
+  .team-grid > .team-dashboard,
+  .team-grid > .team-copy {
+    width: 100%;
+    justify-self: stretch;
+    transform: none !important;
+  }
+
+  .partner-section {
+    min-height: 470px;
+    padding-top: 70px;
+  }
+
+  .partner-section h2 {
+    font-size: 2rem;
+  }
+
+  .logo-slider {
+    margin-top: 65px;
+    max-width: 100vw;
+  }
+
+  .logo-track {
+    gap: 40px;
+    animation-duration: 20s !important;
+  }
+
+  .bank {
+    flex-basis: 150px;
+    height: 65px;
+  }
+
+  .bank img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .bank span {
+    font-size: 0.9rem;
+  }
+
+  .logo-slider::before,
+  .logo-slider::after {
+    width: 65px;
+  }
+
+  .scroll-story,
+  .story-viewport {
+    min-height: 620px;
+    height: 100svh;
+  }
+
+  .story-slide {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-content: center;
+    padding: 70px 0 52px;
+  }
+
+  .story-copy h2 {
+    font-size: clamp(2.25rem, 11vw, 4rem);
+  }
+
+  .story-copy p {
+    font-size: 0.92rem;
+  }
+
+  .story-copy ul {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .story-copy li {
+    padding: 10px 14px 10px 36px;
+    font-size: 0.78rem;
+  }
+
+  .story-copy li::before {
+    left: 12px;
+  }
+
+  .story-art {
+    min-height: 170px;
+    width: min(280px, 72%);
+    justify-self: center;
+    transform: rotate(4deg);
+  }
+
+  .shield-scene {
+    width: min(360px, 100%);
+    height: 350px;
+  }
+
+  .transaction-board {
+    height: 360px;
+    padding: 16px 12px;
+  }
+
+  .transaction-track {
+    gap: 12px;
+  }
+
+  .transaction-item {
+    min-height: 78px;
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .transaction-title,
+  .transaction-meta {
+    overflow-wrap: anywhere;
+  }
+
+  .transaction-amount {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+  }
+
+  .referral-list {
+    height: 190px;
+  }
+
+  .team-dashboard {
+    padding: 18px 14px;
+  }
+
+  .chart-bars {
+    height: 100px;
+  }
+
+  .story-scene {
+    perspective: none;
+  }
+
+  .story-progress span {
+    width: 20px;
+  }
+
+  .story-progress span.active {
+    width: 38px;
+  }
+
+  .story-art strong {
+    font-size: 1.7rem;
+  }
+
+  .art-symbol,
+  .art-chart,
+  .story-art-qr span {
+    font-size: 3.5rem;
+  }
+
+  .banking-scene {
+    opacity: 0.55;
+  }
+
+  .scene-node-two,
+  .scene-node-three,
+  .route-two,
+  .route-three,
+  .particles-two {
+    display: none;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .hero {
+    padding-top: 18px;
+  }
+
+  .hero-grid {
+    gap: 24px;
+  }
+
+  h1,
+  .hero-copy h1 {
+    font-size: clamp(3rem, 11vw, 4.5rem);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.55rem, 10vw, 4rem);
+    letter-spacing: -0.02em;
+    line-height: 1.04;
+  }
+
+  .hero-copy p {
+    font-size: 1rem;
+  }
+
+  .hero-actions,
+  .final-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn,
+  .btn-sm {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .phone-shell {
+    width: min(100%, 330px);
+    max-width: calc(100vw - 32px);
+    transform: none;
+  }
+
+  .hero-visual {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .trust-grid,
+  .feature-grid,
+  .steps-grid,
+  .reward-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    flex-basis: calc(100vw - 32px);
+  }
+
+  .market-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-card {
+    display: none;
+  }
+
+  .phone-transaction {
+    display: none;
+  }
+
+  .demo-bank-card {
+    right: 2%;
+    bottom: 58px;
+    width: min(250px, 68%);
+  }
+
+  .floating-support {
+    right: 14px;
+    bottom: 14px;
+    max-width: calc(100vw - 28px);
+  }
+
+  .support-trigger {
+    min-height: 52px;
+    padding: 0 16px;
+  }
+
+  .support-menu {
+    width: min(220px, calc(100vw - 28px));
+  }
+
+  .site-footer {
+    padding-bottom: 86px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --header-height: 74px;
+  }
+
+  .container {
+    width: min(var(--container), calc(100% - 22px));
+  }
+
+  .section {
+    padding: 58px 0;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+  }
+
+  .security-visual {
+    min-height: 330px;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .phone-screen {
+    min-height: 560px;
+    padding-inline: 14px;
+  }
+
+  .demo-bank-card {
+    right: -2%;
+    bottom: 44px;
+    transform: scale(0.84) rotateY(-8deg) rotateZ(4deg);
+  }
+
+  .balance-value {
+    font-size: 1.9rem;
+  }
+
+  .transaction-item {
+    padding: 16px 14px;
+    gap: 12px;
+  }
+
+  .transaction-item .line-marker {
+    width: 8px;
+    height: 46px;
+  }
+
+  .transaction-copy {
+    min-width: 0;
+  }
+
+  .transaction-title {
+    font-size: 0.85rem;
+  }
+
+  .transaction-meta {
+    font-size: 0.74rem;
+  }
+
+  .transaction-amount {
+    font-size: 0.78rem;
+  }
+
+  .referral-row {
+    padding: 10px 11px;
+  }
+
+  .referral-row > span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .cta-panel {
+    padding: 42px 18px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-grid {
+    gap: 68px;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --container: 1320px;
+  }
+}

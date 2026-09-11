@@ -1,7 +1,7 @@
 const CONFIG = {
-  siteName: "NovaPay",
-  logoMark: "N",
-  logoText: "NovaPay",
+  siteName: "IndreamPay",
+  logoMark: "iD",
+  logoText: "IndreamPay",
   pageTitle: "Smarter money. Simpler everyday.",
   pageDescription: "Everything you need to manage your money in one simple and powerful experience.",
   telegramUrl: "https://t.me/YOUR_TELEGRAM",

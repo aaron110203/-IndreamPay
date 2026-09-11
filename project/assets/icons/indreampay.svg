@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">IndreamPay logo</title>
+  <desc id="desc">Orange rounded square with a white iD monogram and sparkle</desc>
+  <defs>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb52e"/>
+      <stop offset="1" stop-color="#f47716"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="64" fill="url(#orange)"/>
+  <path d="M64 166V94h22v72H64Zm11-84a13 13 0 1 1 0-26 13 13 0 0 1 0 26Z" fill="#fff"/>
+  <path d="M111 166V94h35c30 0 48 14 48 36s-18 36-48 36h-13v-18h12c18 0 27-6 27-18s-9-18-27-18h-12v54h-22Z" fill="#fff"/>
+  <path d="m205 48 4 12 12 4-12 4-4 12-4-12-12-4 12-4 4-12Z" fill="#fff"/>
+  <path d="m51 67 3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9Z" fill="#fff" opacity=".9"/>
+</svg>

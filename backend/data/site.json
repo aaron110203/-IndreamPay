@@ -1,9 +1,9 @@
 {
   "published": {
     "settings": {
-      "websiteName": "FINORA",
+      "websiteName": "IndreamPay",
       "websiteDescription": "A smarter financial experience for everyday money.",
-      "browserTitle": "FINORA | Banking Reimagined for the Future",
+      "browserTitle": "IndreamPay | Banking Reimagined for the Future",
       "metaDescription": "Everything you need to manage your money in one simple experience.",
       "contactEmail": "hello@example.com",
       "supportEmail": "support@example.com"
@@ -11,9 +11,9 @@
     "branding": {
       "logoUrl": "",
       "faviconUrl": "",
-      "logoMark": "P",
-      "logoMarkUrl": "",
-      "logoText": "FINORA",
+      "logoMark": "iD",
+      "logoMarkUrl": "/assets/icons/indreampay.svg",
+      "logoText": "IndreamPay",
       "logoFont": "elegant",
       "logo": "C:\\fakepath\\c8f4add7-a646-43a0-961e-ed2186612576.png",
       "mark": "C:\\fakepath\\grok-image-c9f9d488-1a98-48d3-8df1-f6400a9071d1.jpg"
@@ -191,9 +191,9 @@
   },
   "draft": {
     "settings": {
-      "websiteName": "FINORA",
+      "websiteName": "IndreamPay",
       "websiteDescription": "A smarter financial experience for everyday money.",
-      "browserTitle": "FINORA | Banking Reimagined for the Future",
+      "browserTitle": "IndreamPay | Banking Reimagined for the Future",
       "metaDescription": "Everything you need to manage your money in one simple experience.",
       "contactEmail": "hello@example.com",
       "supportEmail": "support@example.com"
@@ -201,9 +201,9 @@
     "branding": {
       "logoUrl": "",
       "faviconUrl": "",
-      "logoMark": "P",
-      "logoMarkUrl": "",
-      "logoText": "FINORA",
+      "logoMark": "iD",
+      "logoMarkUrl": "/assets/icons/indreampay.svg",
+      "logoText": "IndreamPay",
       "logoFont": "elegant",
       "logo": "C:\\fakepath\\c8f4add7-a646-43a0-961e-ed2186612576.png",
       "mark": "C:\\fakepath\\grok-image-c9f9d488-1a98-48d3-8df1-f6400a9071d1.jpg"

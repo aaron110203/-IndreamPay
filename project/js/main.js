@@ -149,12 +149,14 @@ function initializeSite() {
     currentYear.textContent = new Date().getFullYear();
   }
 
+  document.querySelectorAll('.text-link[data-cta="telegram"]').forEach((button) => { button.dataset.cta = "learn-more"; });
   const ctas = document.querySelectorAll("[data-cta]");
 
   ctas.forEach((button) => {
     const action = button.dataset.cta;
     const urlMap = {
       telegram: CONFIG.telegramUrl,
+      "learn-more": CONFIG.links?.learnMoreUrl || CONFIG.telegramUrl,
       "live-chat": CONFIG.liveChatUrl,
       support: CONFIG.supportUrl,
       app: CONFIG.appUrl,

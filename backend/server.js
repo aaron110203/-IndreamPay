@@ -25,6 +25,7 @@ const logoUpload = multer({
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(db.uploadsDir));
+app.get("/api/health", (_req, res) => res.json({ ok: true, service: "IndreamPay" }));
 
 function safePublicConfig(config) {
   const result = db.clone(config);

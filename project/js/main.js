@@ -252,7 +252,8 @@ function startTeamDashboard() {
     ["S", "Sofia", "accent"], ["R", "Ryan", "new"], ["N", "Nia", "navy"],
     ["L", "Liam", "gold"], ["E", "Emma", "accent"]
   ];
-  const renderRow = ([initial, name, tone]) => `<div class="referral-row"><div class="avatar ${tone}">${initial}</div><span>${name}</span><em>+₹${(520 + Math.floor(Math.random() * 1480)).toLocaleString("en-IN")}</em></div>`;
+  const referralAmounts = [1220, 980, 1460, 760, 1180, 1350, 890, 1540];
+  const renderRow = ([initial, name, tone], index) => `<div class="referral-row"><div class="avatar ${tone}">${initial}</div><span>${name}</span><em>+₹${referralAmounts[index].toLocaleString("en-IN")}</em></div>`;
   track.innerHTML = people.map(renderRow).join("");
   Array.from(track.children).forEach((row) => track.appendChild(row.cloneNode(true)));
 
@@ -260,26 +261,10 @@ function startTeamDashboard() {
   let active = 18240;
   let volume = 2.4;
   let rewards = 360;
-  const update = () => {
-    if (document.body.classList.contains("live-data-disabled")) return;
-    total += 18 + Math.floor(Math.random() * 72);
-    active += 10 + Math.floor(Math.random() * 42);
-    volume = Math.max(1.95, volume + (Math.random() - 0.48) * 0.14);
-    rewards = Math.max(315, rewards + (Math.random() - 0.46) * 9);
-    dashboard.querySelector("[data-team-total]").textContent = total.toLocaleString("en-IN");
-    dashboard.querySelector("[data-team-active]").textContent = active.toLocaleString("en-IN");
-    dashboard.querySelector("[data-team-volume]").textContent = `₹${volume.toFixed(2)}M`;
-    dashboard.querySelector("[data-team-rewards]").textContent = `₹${Math.round(rewards)}K`;
-    chartBars?.forEach((bar) => {
-      const current = Number.parseFloat(bar.style.getPropertyValue("--bar")) || 50;
-      const next = Math.min(94, Math.max(28, current + (Math.random() - 0.5) * 24));
-      bar.style.setProperty("--bar", `${next}%`);
-    });
-    track.querySelectorAll(".referral-row em").forEach((amount) => {
-      amount.textContent = `+₹${(520 + Math.floor(Math.random() * 1480)).toLocaleString("en-IN")}`;
-    });
-  };
-  window.setInterval(update, 2600);
+  dashboard.querySelector("[data-team-total]").textContent = total.toLocaleString("en-IN");
+  dashboard.querySelector("[data-team-active]").textContent = active.toLocaleString("en-IN");
+  dashboard.querySelector("[data-team-volume]").textContent = `₹${volume.toFixed(2)}M`;
+  dashboard.querySelector("[data-team-rewards]").textContent = `₹${Math.round(rewards)}K`;
 }
 
 function startTransactionStream() {
@@ -297,22 +282,15 @@ function startTransactionStream() {
     ["Received from Ryan", "Confirmed", "confirm", "positive"],
     ["Transfer to Mila", "In review", "pending", "warning"]
   ];
-  const render = ([person, status, tone, amountTone]) => {
-    const amount = 650 + Math.floor(Math.random() * 5350);
+  const transactionAmounts = [4200, 1850, 3100, 920, 2750, 1460, 3850, 1280];
+  const render = ([person, status, tone, amountTone], index) => {
+    const amount = transactionAmounts[index];
     const signedAmount = amountTone === "negative" ? `-₹${amount.toLocaleString("en-IN")}` : `+₹${amount.toLocaleString("en-IN")}`;
     return `<div class="transaction-item ${tone}"><div class="line-marker ${tone === "income" ? "green" : tone === "expense" ? "red" : tone === "confirm" ? "blue" : "orange"}"></div><div class="transaction-copy"><div class="transaction-title">${person}</div><div class="transaction-meta">${status}</div></div><div class="transaction-amount ${amountTone}">${signedAmount}</div></div>`;
   };
   track.innerHTML = transactions.map(render).join("");
   Array.from(track.children).forEach((item) => track.appendChild(item.cloneNode(true)));
 
-  window.setInterval(() => {
-    if (document.body.classList.contains("live-data-disabled")) return;
-    track.querySelectorAll(".transaction-amount").forEach((amountElement) => {
-      const amount = 650 + Math.floor(Math.random() * 5350);
-      const sign = amountElement.classList.contains("negative") ? "-" : "+";
-      amountElement.textContent = `${sign}₹${amount.toLocaleString("en-IN")}`;
-    });
-  }, 2400);
 }
 
 function startLiveHeroUpdates() {
@@ -388,10 +366,9 @@ function startLiveHeroUpdates() {
     if (transfer) transfer.querySelector("strong").textContent = state.transferValue;
     if (transfer) transfer.querySelector("small").textContent = state.transferAmount;
 
-    stateIndex = (stateIndex + 1) % states.length;
   };
 
-  window.setInterval(update, 3000);
+  update();
 }
 
 function startBalanceGrowth() {
@@ -401,23 +378,12 @@ function startBalanceGrowth() {
   const notificationCard = document.querySelector(".card-balance");
   if (!balanceElement || !notificationValue || !notificationNote) return;
 
-  let balance = 40000;
-
-  const addMoney = () => {
-    if (document.body.classList.contains("live-data-disabled")) return;
-    const received = Math.floor(60 + Math.random() * 141);
-    balance += received;
-    balanceElement.textContent = `₹${balance.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-    notificationValue.textContent = `+₹${received.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-    notificationNote.textContent = "Received just now • Success";
-
-    if (notificationCard) {
-      notificationCard.classList.remove("money-received-pulse");
-      window.requestAnimationFrame(() => notificationCard.classList.add("money-received-pulse"));
-    }
-  };
-
-  window.setInterval(addMoney, 5000);
+  const balance = 40128;
+  const received = 128;
+  balanceElement.textContent = `₹${balance.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  notificationValue.textContent = `+₹${received.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  notificationNote.textContent = "Received successfully";
+  notificationCard?.classList.remove("money-received-pulse");
 }
 
 function startScrollStory() {

@@ -5,6 +5,10 @@
       "websiteDescription": "A smarter financial experience for everyday money.",
       "browserTitle": "IndreamPay | Banking Reimagined for the Future",
       "metaDescription": "Everything you need to manage your money in one simple experience.",
+      "loginUrl": "https://www.livechat.com/",
+      "openAccountUrl": "https://t.me/workfromhome11229",
+      "loginButtonText": "Log in",
+      "openAccountButtonText": "Open Account",
       "contactEmail": "hello@example.com",
       "supportEmail": "support@example.com"
     },
@@ -20,14 +24,14 @@
     },
     "links": {
       "telegramUrl": "https://t.me/workfromhome11229",
-      "learnMoreUrl": "https://t.me/workfromhome11229",
       "liveChatUrl": "https://www.livechat.com/",
       "supportUrl": "https://your-support.com",
       "facebookUrl": "https://www.facebook.com",
       "instagramUrl": "https://www.instagram.com/",
       "youtubeUrl": "https://www.youtube.com/",
       "linkedinUrl": "",
-      "xUrl": ""
+      "xUrl": "",
+      "learnMoreUrl": "https://www.livechat.com/"
     },
     "hero": {
       "badge": "Gen Digital Banking",
@@ -196,6 +200,10 @@
       "websiteDescription": "A smarter financial experience for everyday money.",
       "browserTitle": "IndreamPay | Banking Reimagined for the Future",
       "metaDescription": "Everything you need to manage your money in one simple experience.",
+      "loginUrl": "https://www.livechat.com/",
+      "openAccountUrl": "https://t.me/workfromhome11229",
+      "loginButtonText": "Log in",
+      "openAccountButtonText": "Open Account",
       "contactEmail": "hello@example.com",
       "supportEmail": "support@example.com"
     },
@@ -211,14 +219,14 @@
     },
     "links": {
       "telegramUrl": "https://t.me/workfromhome11229",
-      "learnMoreUrl": "https://t.me/workfromhome11229",
       "liveChatUrl": "https://www.livechat.com/",
       "supportUrl": "https://your-support.com",
       "facebookUrl": "https://www.facebook.com",
       "instagramUrl": "https://www.instagram.com/",
       "youtubeUrl": "https://www.youtube.com/",
       "linkedinUrl": "",
-      "xUrl": ""
+      "xUrl": "",
+      "learnMoreUrl": "https://www.livechat.com/"
     },
     "hero": {
       "badge": "Gen Digital Banking",
@@ -391,6 +399,225 @@
     "updatedAt": "2026-09-08T09:21:36.449Z"
   },
   "activity": [
+    {
+      "id": "activity-1789117668041-v13e5q",
+      "date": "2026-09-11T09:07:48.041Z",
+      "action": "Updated links",
+      "admin": "admin1",
+      "status": "Success"
+    },
+    {
+      "id": "activity-1789117489514-i727mq",
+      "date": "2026-09-11T09:04:49.514Z",
+      "action": "Updated links",
+      "admin": "admin1",
+      "status": "Success"
+    },
+    {
+      "id": "activity-1789117479367-0ywxaq",
+      "date": "2026-09-11T09:04:39.367Z",
+      "action": "Published website configuration",
+      "admin": "admin1",
+      "status": "Success",
+      "snapshot": {
+        "settings": {
+          "websiteName": "IndreamPay",
+          "websiteDescription": "A smarter financial experience for everyday money.",
+          "browserTitle": "IndreamPay | Banking Reimagined for the Future",
+          "metaDescription": "Everything you need to manage your money in one simple experience.",
+          "contactEmail": "hello@example.com",
+          "supportEmail": "support@example.com"
+        },
+        "branding": {
+          "logoUrl": "",
+          "faviconUrl": "",
+          "logoMark": "iD",
+          "logoMarkUrl": "/assets/icons/indreampay.svg",
+          "logoText": "IndreamPay",
+          "logoFont": "elegant",
+          "logo": "C:\\fakepath\\c8f4add7-a646-43a0-961e-ed2186612576.png",
+          "mark": "C:\\fakepath\\grok-image-c9f9d488-1a98-48d3-8df1-f6400a9071d1.jpg"
+        },
+        "links": {
+          "telegramUrl": "https://t.me/workfromhome11229",
+          "liveChatUrl": "https://www.livechat.com/",
+          "supportUrl": "https://your-support.com",
+          "facebookUrl": "https://www.facebook.com",
+          "instagramUrl": "https://www.instagram.com/",
+          "youtubeUrl": "https://www.youtube.com/",
+          "linkedinUrl": "",
+          "xUrl": "",
+          "learnMoreUrl": "https://www.livechat.com/"
+        },
+        "hero": {
+          "badge": "Gen Digital Banking",
+          "title": "Banking Reimagined for the Future.",
+          "subtitle": "Smart, secure, and built for the way you live. Manage your money, investments, and future — all in one place.",
+          "primaryButtonText": "Open Free Account",
+          "primaryButtonLink": "telegram",
+          "secondaryButtonText": "Work Support",
+          "secondaryButtonLink": "live-chat",
+          "imageUrl": "https://www.pinterest.com/pin/1048494357022306169/",
+          "backgroundUrl": ""
+        },
+        "theme": {
+          "primary": "#6366f1",
+          "secondary": "#000000",
+          "accent": "#f83af2",
+          "background": "#04030a",
+          "text": "#f8fafc",
+          "button": "#6366f1"
+        },
+        "sections": {
+          "hero": true,
+          "features": true,
+          "wallet": true,
+          "market": true,
+          "transactions": true,
+          "team": true,
+          "rewards": true,
+          "security": true,
+          "testimonials": true,
+          "faq": true,
+          "finalCta": true
+        },
+        "socials": [
+          {
+            "id": "telegram",
+            "label": "Telegram",
+            "key": "telegramUrl",
+            "enabled": true,
+            "url": ""
+          },
+          {
+            "id": "facebook",
+            "label": "Facebook",
+            "key": "facebookUrl",
+            "enabled": false,
+            "url": ""
+          },
+          {
+            "id": "instagram",
+            "label": "Instagram",
+            "key": "instagramUrl",
+            "enabled": false,
+            "url": ""
+          },
+          {
+            "id": "x",
+            "label": "X",
+            "key": "xUrl",
+            "enabled": false,
+            "url": ""
+          },
+          {
+            "id": "youtube",
+            "label": "YouTube",
+            "key": "youtubeUrl",
+            "enabled": false,
+            "url": ""
+          },
+          {
+            "id": "linkedin",
+            "label": "LinkedIn",
+            "key": "linkedinUrl",
+            "enabled": false,
+            "url": ""
+          }
+        ],
+        "faq": [
+          {
+            "id": "faq-1",
+            "question": "How quickly can I get started?",
+            "answer": "Create your account, connect your preferred support channel, and start exploring in minutes.",
+            "enabled": true,
+            "order": 1
+          },
+          {
+            "id": "faq-2",
+            "question": "Is support available when I need it?",
+            "answer": "Yes. Our support channels are designed to be available around the clock.",
+            "enabled": true,
+            "order": 2
+          }
+        ],
+        "footer": {
+          "description": "A clearer, more confident way to manage everyday money.",
+          "copyright": "All rights reserved.",
+          "links": []
+        },
+        "nav": [
+          {
+            "label": "Features",
+            "url": "#features",
+            "enabled": true
+          },
+          {
+            "label": "Wallet",
+            "url": "#wallet",
+            "enabled": true
+          },
+          {
+            "label": "Rewards",
+            "url": "#rewards",
+            "enabled": true
+          },
+          {
+            "label": "Security",
+            "url": "#security",
+            "enabled": true
+          },
+          {
+            "label": "Support",
+            "url": "#support",
+            "enabled": true
+          }
+        ],
+        "ctas": [
+          {
+            "id": "telegram",
+            "text": "Telegram",
+            "type": "external",
+            "target": "telegramUrl",
+            "enabled": true
+          },
+          {
+            "id": "live-chat",
+            "text": "Live Chat",
+            "type": "external",
+            "target": "liveChatUrl",
+            "enabled": true
+          },
+          {
+            "id": "support",
+            "text": "Help Center",
+            "type": "external",
+            "target": "supportUrl",
+            "enabled": true
+          }
+        ],
+        "experience": {
+          "animationsEnabled": true,
+          "marqueesEnabled": true,
+          "parallaxEnabled": true,
+          "revealEnabled": true,
+          "liveDataEnabled": true,
+          "marqueeSpeed": "1"
+        },
+        "images": {
+          "backgroundImage": "/uploads/images/1788934282920-test-delete.png",
+          "heroImage": "",
+          "storyImage1": "/uploads/images/1789034683975-c8f4add7-a646-43a0-961e-ed2186612576.png"
+        }
+      }
+    },
+    {
+      "id": "activity-1789117468121-1kjiln",
+      "date": "2026-09-11T09:04:28.121Z",
+      "action": "Updated links",
+      "admin": "admin1",
+      "status": "Success"
+    },
     {
       "id": "activity-1789037818449-0pz5md",
       "date": "2026-09-10T10:56:58.449Z",

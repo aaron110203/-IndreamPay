@@ -6,6 +6,7 @@ cookie.txt
 *.log
 backend/data/uploads/tmp/
 backend/uploads/tmp/
+backend/data/admin-sessions.json
 *.db
 *.sqlite
 *.sqlite3

@@ -10,6 +10,7 @@ const db = require("./db");
 const app = express();
 const port = Number(process.env.PORT || 8000);
 const sessions = new Map();
+const sessionsFile = path.join(__dirname, "data", "admin-sessions.json");
 const projectDir = path.join(__dirname, "..", "project");
 const upload = multer({
   dest: path.join(db.uploadsDir, "tmp"),
@@ -21,6 +22,26 @@ const logoUpload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: (_req, file, callback) => callback(null, /^(image\/(png|jpeg|webp|svg\+xml))$/.test(file.mimetype))
 });
+
+function sessionKey(token) {
+  return crypto.createHash("sha256").update(token).digest("hex");
+}
+function loadSessions() {
+  try {
+    const saved = JSON.parse(fs.readFileSync(sessionsFile, "utf8"));
+    for (const [key, session] of Object.entries(saved)) {
+      if (session?.expires > Date.now()) sessions.set(key, session);
+    }
+  } catch {
+    // The session file is optional on first start.
+  }
+}
+function saveSessions() {
+  fs.mkdirSync(path.dirname(sessionsFile), { recursive: true });
+  const saved = Object.fromEntries([...sessions].filter(([, session]) => session.expires > Date.now()));
+  fs.writeFileSync(sessionsFile, JSON.stringify(saved, null, 2));
+}
+loadSessions();
 
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
@@ -39,7 +60,7 @@ function removeLogoAsset(url, keepUrl = "") {
 }
 function requireAdmin(req, res, next) {
   const token = req.headers.cookie?.match(/admin_session=([^;]+)/)?.[1];
-  const session = token && sessions.get(token);
+  const session = token && sessions.get(sessionKey(token));
   if (!session || session.expires < Date.now()) {
     if (req.accepts("html") && !req.originalUrl.startsWith("/api/")) return res.redirect("/admin/login.html");
     return res.status(401).json({ error: "Authentication required" });
@@ -59,11 +80,12 @@ app.post("/api/admin/login", (req, res) => {
   const data = db.read();
   if (!email || !password || data.admin.status !== "ACTIVE" || data.admin.email.toLowerCase() !== String(email).toLowerCase() || !bcrypt.compareSync(password, data.admin.passwordHash)) return res.status(401).json({ error: "Invalid email or password" });
   const token = crypto.randomBytes(32).toString("hex");
-  sessions.set(token, { email: data.admin.email, role: data.admin.role, expires: Date.now() + 8 * 60 * 60 * 1000 });
-  res.setHeader("Set-Cookie", `admin_session=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=28800`);
+  sessions.set(sessionKey(token), { email: data.admin.email, role: data.admin.role, expires: Date.now() + 30 * 24 * 60 * 60 * 1000 });
+  saveSessions();
+  res.setHeader("Set-Cookie", `admin_session=${token}; HttpOnly; SameSite=Lax; Path=/; Max-Age=2592000`);
   res.json({ ok: true, admin: { email: data.admin.email, role: data.admin.role } });
 });
-app.post("/api/admin/logout", requireAdmin, (req, res) => { const token = req.headers.cookie.match(/admin_session=([^;]+)/)?.[1]; sessions.delete(token); res.setHeader("Set-Cookie", "admin_session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0"); res.json({ ok: true }); });
+app.post("/api/admin/logout", requireAdmin, (req, res) => { const token = req.headers.cookie.match(/admin_session=([^;]+)/)?.[1]; sessions.delete(sessionKey(token)); saveSessions(); res.setHeader("Set-Cookie", "admin_session=; HttpOnly; SameSite=Lax; Path=/; Max-Age=0"); res.json({ ok: true }); });
 app.get("/api/admin/me", requireAdmin, (req, res) => res.json({ admin: req.admin }));
 app.get("/api/admin/config", requireAdmin, (req, res) => { const data = db.read(); res.json({ draft: data.draft, published: data.published }); });
 for (const key of ["settings", "branding", "links", "hero", "theme", "sections", "socials", "faq", "footer", "nav", "ctas", "experience"]) {

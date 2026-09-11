@@ -150,6 +150,10 @@ function initializeSite() {
   }
 
   document.querySelectorAll('.text-link[data-cta="telegram"]').forEach((button) => { button.dataset.cta = "learn-more"; });
+  document.querySelectorAll('.nav-login').forEach((button) => { button.dataset.cta = "login"; });
+  document.querySelectorAll('.open-account').forEach((button) => { button.dataset.cta = "open-account"; });
+  document.querySelectorAll('.nav-login').forEach((button) => { if (CONFIG.settings?.loginButtonText) button.textContent = CONFIG.settings.loginButtonText; });
+  document.querySelectorAll('.open-account').forEach((button) => { if (CONFIG.settings?.openAccountButtonText) button.textContent = CONFIG.settings.openAccountButtonText; });
   const ctas = document.querySelectorAll("[data-cta]");
 
   ctas.forEach((button) => {
@@ -157,6 +161,8 @@ function initializeSite() {
     const urlMap = {
       telegram: CONFIG.telegramUrl,
       "learn-more": CONFIG.links?.learnMoreUrl || CONFIG.telegramUrl,
+      login: CONFIG.settings?.loginUrl,
+      "open-account": CONFIG.settings?.openAccountUrl,
       "live-chat": CONFIG.liveChatUrl,
       support: CONFIG.supportUrl,
       app: CONFIG.appUrl,

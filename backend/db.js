@@ -2,9 +2,10 @@ const fs = require("node:fs");
 const path = require("node:path");
 const bcrypt = require("bcryptjs");
 
-const dataDir = path.join(__dirname, "data");
-const uploadsDir = path.join(__dirname, "uploads");
+const dataDir = path.resolve(process.env.DATA_DIR || path.join(__dirname, "data"));
+const uploadsDir = path.resolve(process.env.UPLOADS_DIR || path.join(dataDir, "uploads"));
 const dbFile = path.join(dataDir, "site.json");
+const bundledDbFile = path.join(__dirname, "data", "site.json");
 
 const defaults = {
   settings: {
@@ -80,7 +81,12 @@ function ensureData() {
   fs.mkdirSync(path.join(uploadsDir, "logos"), { recursive: true });
   fs.mkdirSync(path.join(uploadsDir, "images"), { recursive: true });
   fs.mkdirSync(path.join(uploadsDir, "favicon"), { recursive: true });
+  fs.mkdirSync(path.join(uploadsDir, "tmp"), { recursive: true });
   if (!fs.existsSync(dbFile)) {
+    if (dbFile !== bundledDbFile && fs.existsSync(bundledDbFile)) {
+      fs.copyFileSync(bundledDbFile, dbFile);
+      return;
+    }
     const adminEmail = process.env.ADMIN_EMAIL || "admin1";
     const adminPassword = process.env.ADMIN_PASSWORD || "admin";
     const now = new Date().toISOString();
